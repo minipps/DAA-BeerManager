@@ -13,6 +13,12 @@
 		36A43BDC2595174E00A4B32D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A43BDA2595174E00A4B32D /* Main.storyboard */; };
 		36A43BDE2595174F00A4B32D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 36A43BDD2595174F00A4B32D /* Assets.xcassets */; };
 		36A43BE12595174F00A4B32D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 36A43BDF2595174F00A4B32D /* LaunchScreen.storyboard */; };
+		36A43BF0259517C500A4B32D /* RGBiOSUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43BEF259517C500A4B32D /* RGBiOSUtilities.swift */; };
+		36A43BF2259517D800A4B32D /* RGBiOSUtilitiesBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43BF1259517D800A4B32D /* RGBiOSUtilitiesBundle.swift */; };
+		36A43BF4259517E400A4B32D /* RGBiOSUtilitiesSandbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43BF3259517E400A4B32D /* RGBiOSUtilitiesSandbox.swift */; };
+		36A43BF6259518EE00A4B32D /* defaultbeer.csv in Resources */ = {isa = PBXBuildFile; fileRef = 36A43BF5259518EE00A4B32D /* defaultbeer.csv */; };
+		36A43BF82595191700A4B32D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43BF72595191700A4B32D /* Model.swift */; };
+		36A43BFA2595192200A4B32D /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43BF92595192200A4B32D /* Beer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,12 @@
 		36A43BDD2595174F00A4B32D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		36A43BE02595174F00A4B32D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		36A43BE22595174F00A4B32D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36A43BEF259517C500A4B32D /* RGBiOSUtilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBiOSUtilities.swift; sourceTree = "<group>"; };
+		36A43BF1259517D800A4B32D /* RGBiOSUtilitiesBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBiOSUtilitiesBundle.swift; sourceTree = "<group>"; };
+		36A43BF3259517E400A4B32D /* RGBiOSUtilitiesSandbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RGBiOSUtilitiesSandbox.swift; sourceTree = "<group>"; };
+		36A43BF5259518EE00A4B32D /* defaultbeer.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = defaultbeer.csv; path = ../../../defaultbeer.csv; sourceTree = "<group>"; };
+		36A43BF72595191700A4B32D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		36A43BF92595192200A4B32D /* Beer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Beer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +68,53 @@
 		36A43BD32595174E00A4B32D /* BeerManager */ = {
 			isa = PBXGroup;
 			children = (
-				36A43BD42595174E00A4B32D /* AppDelegate.swift */,
-				36A43BD62595174E00A4B32D /* SceneDelegate.swift */,
-				36A43BD82595174E00A4B32D /* ViewController.swift */,
-				36A43BDA2595174E00A4B32D /* Main.storyboard */,
+				36A43BF5259518EE00A4B32D /* defaultbeer.csv */,
+				36A43BEE259517B600A4B32D /* RGB */,
+				36A43BED259517A100A4B32D /* Storyboard */,
+				36A43BEC2595179D00A4B32D /* Data */,
+				36A43BE82595175600A4B32D /* Controller */,
 				36A43BDD2595174F00A4B32D /* Assets.xcassets */,
-				36A43BDF2595174F00A4B32D /* LaunchScreen.storyboard */,
 				36A43BE22595174F00A4B32D /* Info.plist */,
 			);
 			path = BeerManager;
+			sourceTree = "<group>";
+		};
+		36A43BE82595175600A4B32D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				36A43BD42595174E00A4B32D /* AppDelegate.swift */,
+				36A43BD62595174E00A4B32D /* SceneDelegate.swift */,
+				36A43BD82595174E00A4B32D /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		36A43BEC2595179D00A4B32D /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				36A43BF72595191700A4B32D /* Model.swift */,
+				36A43BF92595192200A4B32D /* Beer.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		36A43BED259517A100A4B32D /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				36A43BDA2595174E00A4B32D /* Main.storyboard */,
+				36A43BDF2595174F00A4B32D /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		36A43BEE259517B600A4B32D /* RGB */ = {
+			isa = PBXGroup;
+			children = (
+				36A43BEF259517C500A4B32D /* RGBiOSUtilities.swift */,
+				36A43BF1259517D800A4B32D /* RGBiOSUtilitiesBundle.swift */,
+				36A43BF3259517E400A4B32D /* RGBiOSUtilitiesSandbox.swift */,
+			);
+			name = RGB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +175,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A43BF6259518EE00A4B32D /* defaultbeer.csv in Resources */,
 				36A43BE12595174F00A4B32D /* LaunchScreen.storyboard in Resources */,
 				36A43BDE2595174F00A4B32D /* Assets.xcassets in Resources */,
 				36A43BDC2595174E00A4B32D /* Main.storyboard in Resources */,
@@ -138,8 +189,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36A43BF82595191700A4B32D /* Model.swift in Sources */,
 				36A43BD92595174E00A4B32D /* ViewController.swift in Sources */,
 				36A43BD52595174E00A4B32D /* AppDelegate.swift in Sources */,
+				36A43BFA2595192200A4B32D /* Beer.swift in Sources */,
+				36A43BF2259517D800A4B32D /* RGBiOSUtilitiesBundle.swift in Sources */,
+				36A43BF0259517C500A4B32D /* RGBiOSUtilities.swift in Sources */,
+				36A43BF4259517E400A4B32D /* RGBiOSUtilitiesSandbox.swift in Sources */,
 				36A43BD72595174E00A4B32D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
