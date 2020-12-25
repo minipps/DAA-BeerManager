@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        var m = Model()
         // Do any additional setup after loading the view.
     }
 

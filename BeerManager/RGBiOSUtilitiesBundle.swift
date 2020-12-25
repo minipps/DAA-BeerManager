@@ -91,7 +91,6 @@ public func bundleReadAsStringFromFolder(folderName:String,
                                          fileName:String,
                                          withExtension fileExtension:String) -> String? {
   var text:String? = nil
-
   if let temp = Bundle.main.url(forResource: fileName,
                                 withExtension: fileExtension,
                                 subdirectory: folderName) {
@@ -100,7 +99,6 @@ public func bundleReadAsStringFromFolder(folderName:String,
     } catch  {
       text = nil
     } // End of do/catch
-
   } // End of if/let
   return text
 } // End of bundleReadAsStringFromFolder()
