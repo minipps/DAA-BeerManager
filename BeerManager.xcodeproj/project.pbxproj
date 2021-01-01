@@ -20,6 +20,7 @@
 		36A43BFA2595192200A4B32D /* Beer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43BF92595192200A4B32D /* Beer.swift */; };
 		36A43C012595FB9900A4B32D /* BeerManager-data in Resources */ = {isa = PBXBuildFile; fileRef = 36A43C002595FB9900A4B32D /* BeerManager-data */; };
 		36A43C032595FBB000A4B32D /* BeerManager-photos in Resources */ = {isa = PBXBuildFile; fileRef = 36A43C022595FBB000A4B32D /* BeerManager-photos */; };
+		36A43C05259F6AB600A4B32D /* RowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43C04259F6AB500A4B32D /* RowCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		36A43BFC25951BBE00A4B32D /* defaultbeer.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = defaultbeer.csv; sourceTree = "<group>"; };
 		36A43C002595FB9900A4B32D /* BeerManager-data */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "BeerManager-data"; path = "BeerManager/BundleFiles/BeerManager-data"; sourceTree = "<group>"; };
 		36A43C022595FBB000A4B32D /* BeerManager-photos */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "BeerManager-photos"; path = "BeerManager/BundleFiles/BeerManager-photos"; sourceTree = "<group>"; };
+		36A43C04259F6AB500A4B32D /* RowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RowCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 				36A43BD42595174E00A4B32D /* AppDelegate.swift */,
 				36A43BD62595174E00A4B32D /* SceneDelegate.swift */,
 				36A43BD82595174E00A4B32D /* ViewController.swift */,
+				36A43C04259F6AB500A4B32D /* RowCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -227,6 +230,7 @@
 				36A43BF0259517C500A4B32D /* RGBiOSUtilities.swift in Sources */,
 				36A43BF4259517E400A4B32D /* RGBiOSUtilitiesSandbox.swift in Sources */,
 				36A43BD72595174E00A4B32D /* SceneDelegate.swift in Sources */,
+				36A43C05259F6AB600A4B32D /* RowCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
