@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main Screen-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BeerManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Main Screen" id="BYZ-38-t0r" customClass="ViewController" customModule="BeerManager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -62,8 +62,8 @@
                                             <viewLayoutGuide key="safeArea" id="Xar-0t-iFQ"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="beerName" destination="zpG-K8-qY2" id="FgT-VQ-xm0"/>
-                                            <outlet property="beerPhoto" destination="QPl-WZ-Du3" id="sTe-Az-ECO"/>
+                                            <outlet property="beerName" destination="zpG-K8-qY2" id="tLc-Mg-2cD"/>
+                                            <outlet property="beerPhoto" destination="QPl-WZ-Du3" id="8dM-q9-oO2"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -88,11 +88,37 @@
                         <outlet property="addButton" destination="iSW-5Q-DSg" id="g3J-cE-4bj"/>
                         <outlet property="removeButton" destination="rJI-Ww-fL3" id="IQF-8S-yXg"/>
                         <outlet property="tableView" destination="RJx-t6-SUL" id="nS4-rF-rx8"/>
+                        <segue destination="b8h-iE-UPu" kind="showDetail" identifier="detailSegue" destinationCreationSelector="detailSegue" id="6Qb-tw-tp9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1128.75" y="114.08450704225352"/>
+        </scene>
+        <!--Tablet Detail View-->
+        <scene sceneID="mrr-yx-bsD">
+            <objects>
+                <viewController title="Tablet Detail View" id="b8h-iE-UPu" customClass="TableDetailViewController" customModule="BeerManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uha-Vn-LLI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nah de locos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gaq-PE-CTC">
+                                <rect key="frame" x="111" y="217" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="0Dw-R4-TPw"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="glk-H2-xO9"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdu-kA-nVW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1944" y="-76"/>
         </scene>
     </scenes>
 </document>

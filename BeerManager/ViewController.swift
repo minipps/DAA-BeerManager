@@ -20,6 +20,8 @@ class ViewController: UIViewController {
         // TODO: Hacer guardado en disco cada vez que se vaya a background.
         self.editingStyle = UITableViewCell.EditingStyle.none;
         self.tableView.dataSource = self
+        self.tableView.delegate = self
+        self.tableView.allowsSelectionDuringEditing = true
         self.tableView.reloadData()
     }
 
@@ -68,7 +70,32 @@ extension ViewController : UITableViewDataSource {
         cell.beerName?.text = beer.name;
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
 
 }
-
+//MARK: TODO: TableViewControllerDelegate
+extension ViewController : UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        //MARK: TODO: Hay que hacer una confirmacion antes de borrar
+        if self.editingStyle == UITableViewCell.EditingStyle.delete {
+                   self.m.cervezas.remove(at: indexPath.row)
+                   self.tableView.beginUpdates()
+                   self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+                   self.tableView.endUpdates()
+        } else {
+            self.performSegue(withIdentifier: "detailSegue", sender: m.cervezas[indexPath.row])
+        }
+    }
+    //MARK: TODO: Clean this
+    // This function is called before the segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // get a reference to the second view controller
+        let secondViewController = segue.destination as! TableDetailViewController
+        
+        // set a variable in the second view controller with the data to pass
+        secondViewController.beer = (sender as! Beer)
+    }
+}
