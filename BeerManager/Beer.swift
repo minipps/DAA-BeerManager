@@ -42,14 +42,12 @@ public class Beer : NSObject, NSCoding, NSSecureCoding {
         let tempId = tokens[6]
         let tempGradIBU = (tokens[7] as NSString).floatValue
         let tempGradAlc = (tokens[8] as NSString).floatValue
-        //TODO: DESCOMENTAR CUANDO HAYA FOTOS
-        /*
-        guard let imagePath = splitIntoNameAndExtension(total: tokens[10]),
+        guard let imagePath = splitIntoNameAndExtension(total: tokens[9]),
             let fullPath = Bundle.main.url(forResource: imagePath[0], withExtension: imagePath[1], subdirectory: NAME_OF_PHOTO_FOLDER_IN_BUNDLE),
             fm.fileExists(atPath: fullPath.path),
             let tempFoto = UIImage(contentsOfFile: fullPath.path)
         else { return nil }
-        */
+        
         
         guard tempCapacidad != 0.0,
             tempGradIBU != 0.0
@@ -58,14 +56,26 @@ public class Beer : NSObject, NSCoding, NSSecureCoding {
         self.name = tempName
         self.tipoEnvase = tempTipo
         self.fabricante = tempFab
-        //self.pais = tempPais
+        //self.pais = tempPais //No existe el pais en el csv...	
         self.capacidad = tempCapacidad
         self.fechaConsumo = tempFecha
         self.nota = tempNota
         self.id = tempId
         self.gradIBU = tempGradIBU
         self.gradAlc = tempGradAlc
-        self.foto = nil
+        self.foto = tempFoto;
+    }
+    override public init() {
+        self.name = "Nueva cerveza"
+        self.tipoEnvase = ""
+        self.fabricante = ""
+        self.capacidad = 0.0
+        self.fechaConsumo = Date()
+        self.nota = ""
+        self.id = ""
+        self.gradIBU = 0.0
+        self.gradAlc = 0.0
+        self.foto = nil;
     }
     public func encode(with coder: NSCoder) {
         coder.encode(name, forKey: "name")

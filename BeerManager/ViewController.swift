@@ -9,11 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
+    //MARK: TODO: SORT
+    //MARK: TODO: Cleanup
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var removeButton: UIButton!
     @IBOutlet weak var tableView: UITableView!
     var m = Model()
     var editingStyle:UITableViewCell.EditingStyle?
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
+//        let tmp = sender as! TableDetailViewController
+//        tmp.cerveza?.name = tmp.nombre ?? "Sin nombre"
+//        tmp.cerveza?.fabricante = tmp.fab ?? "Sin fabricante"
+        self.tableView.reloadData()
+        return
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -22,7 +31,14 @@ class ViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.delegate = self
         self.tableView.allowsSelectionDuringEditing = true
+        NotificationCenter.default.addObserver(self, selector: #selector(applicationWillEnterBackground(notification:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
         self.tableView.reloadData()
+    }
+    
+    @objc func applicationWillEnterBackground(notification : NSNotification) {
+        if !m.serializeToDocuments() {
+            notifyUser(self, alertTitle: "I/O Error", alertMessage: "No se pudo escribir el archivo serializado.", runOnOK: {_ in})
+        }
     }
 
     @IBAction func addButtonAction(_ sender : Any) {
@@ -74,28 +90,29 @@ extension ViewController : UITableViewDataSource {
         return true
     }
 
+
 }
 //MARK: TODO: TableViewControllerDelegate
 extension ViewController : UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //MARK: TODO: Hay que hacer una confirmacion antes de borrar
         if self.editingStyle == UITableViewCell.EditingStyle.delete {
-                   self.m.cervezas.remove(at: indexPath.row)
-                   self.tableView.beginUpdates()
-                   self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
-                   self.tableView.endUpdates()
+               //MARK: TODO: Hay que hacer una confirmacion antes de borrar
+                  self.m.cervezas.remove(at: indexPath.row)
+                  self.tableView.beginUpdates()
+                  self.tableView.deleteRows(at: [indexPath], with: UITableView.RowAnimation.automatic)
+                  self.tableView.endUpdates()
+       } else if self.editingStyle == UITableViewCell.EditingStyle.insert {
+                    let b = Beer()
+                    m.cervezas.insert(b, at: indexPath.row)
+                    self.tableView.insertRows(at: [indexPath], with: .fade)
+                    self.performSegue(withIdentifier: "detailSegue", sender: m.cervezas[indexPath.row])
+                   tableView.reloadData()
         } else {
             self.performSegue(withIdentifier: "detailSegue", sender: m.cervezas[indexPath.row])
         }
     }
-    //MARK: TODO: Clean this
-    // This function is called before the segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // get a reference to the second view controller
         let secondViewController = segue.destination as! TableDetailViewController
-        
-        // set a variable in the second view controller with the data to pass
-        secondViewController.beer = (sender as! Beer)
+        secondViewController.cerveza = (sender as! Beer)
     }
 }
