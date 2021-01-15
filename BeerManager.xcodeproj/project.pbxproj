@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		360A3BAF25B231BC00F6D340 /* metieneslocamarzo21.png in Resources */ = {isa = PBXBuildFile; fileRef = 360A3BAC25B231BC00F6D340 /* metieneslocamarzo21.png */; };
+		360A3BB025B231BC00F6D340 /* voodooqueenmayo21.png in Resources */ = {isa = PBXBuildFile; fileRef = 360A3BAD25B231BC00F6D340 /* voodooqueenmayo21.png */; };
+		360A3BB125B231BC00F6D340 /* lagallolocajunio21.png in Resources */ = {isa = PBXBuildFile; fileRef = 360A3BAE25B231BC00F6D340 /* lagallolocajunio21.png */; };
 		3621089425B2222F00D1030A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3621089325B2222F00D1030A /* logo.png */; };
 		3621089725B223BF00D1030A /* beerManagerLaunchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 3621089625B223BE00D1030A /* beerManagerLaunchscreen.png */; };
 		367DA46225B06732008EAB1E /* Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367DA46125B06732008EAB1E /* Maker.swift */; };
@@ -31,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		360A3BAC25B231BC00F6D340 /* metieneslocamarzo21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = metieneslocamarzo21.png; sourceTree = "<group>"; };
+		360A3BAD25B231BC00F6D340 /* voodooqueenmayo21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = voodooqueenmayo21.png; sourceTree = "<group>"; };
+		360A3BAE25B231BC00F6D340 /* lagallolocajunio21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lagallolocajunio21.png; sourceTree = "<group>"; };
 		3621089325B2222F00D1030A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = "../../../Desktop/Beer (1)/ios/logo.png"; sourceTree = "<group>"; };
 		3621089625B223BE00D1030A /* beerManagerLaunchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beerManagerLaunchscreen.png; path = ../../../../beerManagerLaunchscreen.png; sourceTree = "<group>"; };
 		367DA46125B06732008EAB1E /* Maker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maker.swift; sourceTree = "<group>"; };
@@ -158,6 +164,9 @@
 		36A43BFD25951BC600A4B32D /* BeerManager-photos */ = {
 			isa = PBXGroup;
 			children = (
+				360A3BAE25B231BC00F6D340 /* lagallolocajunio21.png */,
+				360A3BAC25B231BC00F6D340 /* metieneslocamarzo21.png */,
+				360A3BAD25B231BC00F6D340 /* voodooqueenmayo21.png */,
 			);
 			path = "BeerManager-photos";
 			sourceTree = "<group>";
@@ -232,8 +241,11 @@
 				36A43C012595FB9900A4B32D /* BeerManager-data in Resources */,
 				3621089725B223BF00D1030A /* beerManagerLaunchscreen.png in Resources */,
 				36A43BE12595174F00A4B32D /* LaunchScreen.storyboard in Resources */,
+				360A3BAF25B231BC00F6D340 /* metieneslocamarzo21.png in Resources */,
 				36A43BDE2595174F00A4B32D /* Assets.xcassets in Resources */,
 				3621089425B2222F00D1030A /* logo.png in Resources */,
+				360A3BB125B231BC00F6D340 /* lagallolocajunio21.png in Resources */,
+				360A3BB025B231BC00F6D340 /* voodooqueenmayo21.png in Resources */,
 				367DA46625B0C237008EAB1E /* TableHeaderView.xib in Resources */,
 				36A43BDC2595174E00A4B32D /* Main.storyboard in Resources */,
 			);
