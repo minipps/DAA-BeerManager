@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3621089425B2222F00D1030A /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3621089325B2222F00D1030A /* logo.png */; };
+		3621089725B223BF00D1030A /* beerManagerLaunchscreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 3621089625B223BE00D1030A /* beerManagerLaunchscreen.png */; };
+		367DA46225B06732008EAB1E /* Maker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367DA46125B06732008EAB1E /* Maker.swift */; };
+		367DA46425B0C1CC008EAB1E /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367DA46325B0C1CC008EAB1E /* TableHeaderView.swift */; };
+		367DA46625B0C237008EAB1E /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 367DA46525B0C237008EAB1E /* TableHeaderView.xib */; };
+		367DA46825B0D203008EAB1E /* MakerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367DA46725B0D203008EAB1E /* MakerDetailView.swift */; };
 		36A43BD52595174E00A4B32D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43BD42595174E00A4B32D /* AppDelegate.swift */; };
 		36A43BD72595174E00A4B32D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43BD62595174E00A4B32D /* SceneDelegate.swift */; };
 		36A43BD92595174E00A4B32D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36A43BD82595174E00A4B32D /* ViewController.swift */; };
@@ -25,6 +31,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3621089325B2222F00D1030A /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo.png; path = "../../../Desktop/Beer (1)/ios/logo.png"; sourceTree = "<group>"; };
+		3621089625B223BE00D1030A /* beerManagerLaunchscreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = beerManagerLaunchscreen.png; path = ../../../../beerManagerLaunchscreen.png; sourceTree = "<group>"; };
+		367DA46125B06732008EAB1E /* Maker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Maker.swift; sourceTree = "<group>"; };
+		367DA46325B0C1CC008EAB1E /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
+		367DA46525B0C237008EAB1E /* TableHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
+		367DA46725B0D203008EAB1E /* MakerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MakerDetailView.swift; sourceTree = "<group>"; };
 		36A43BD12595174E00A4B32D /* BeerManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BeerManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		36A43BD42595174E00A4B32D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		36A43BD62595174E00A4B32D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +71,7 @@
 		36A43BC82595174E00A4B32D = {
 			isa = PBXGroup;
 			children = (
+				3621089325B2222F00D1030A /* logo.png */,
 				36A43C022595FBB000A4B32D /* BeerManager-photos */,
 				36A43C002595FB9900A4B32D /* BeerManager-data */,
 				36A43BD32595174E00A4B32D /* BeerManager */,
@@ -96,6 +109,8 @@
 				36A43BD82595174E00A4B32D /* ViewController.swift */,
 				36D56B43259FF74B00AF2334 /* TableDetailViewController.swift */,
 				36A43C04259F6AB500A4B32D /* RowCell.swift */,
+				367DA46325B0C1CC008EAB1E /* TableHeaderView.swift */,
+				367DA46725B0D203008EAB1E /* MakerDetailView.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -105,6 +120,7 @@
 			children = (
 				36A43BF72595191700A4B32D /* Model.swift */,
 				36A43BF92595192200A4B32D /* Beer.swift */,
+				367DA46125B06732008EAB1E /* Maker.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -114,6 +130,7 @@
 			children = (
 				36A43BDA2595174E00A4B32D /* Main.storyboard */,
 				36A43BDF2595174F00A4B32D /* LaunchScreen.storyboard */,
+				367DA46525B0C237008EAB1E /* TableHeaderView.xib */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -131,6 +148,7 @@
 		36A43BFB25951BAD00A4B32D /* BundleFiles */ = {
 			isa = PBXGroup;
 			children = (
+				3621089625B223BE00D1030A /* beerManagerLaunchscreen.png */,
 				36A43BFF2595FA0200A4B32D /* BeerManager-data */,
 				36A43BFD25951BC600A4B32D /* BeerManager-photos */,
 			);
@@ -212,8 +230,11 @@
 			files = (
 				36A43C032595FBB000A4B32D /* BeerManager-photos in Resources */,
 				36A43C012595FB9900A4B32D /* BeerManager-data in Resources */,
+				3621089725B223BF00D1030A /* beerManagerLaunchscreen.png in Resources */,
 				36A43BE12595174F00A4B32D /* LaunchScreen.storyboard in Resources */,
 				36A43BDE2595174F00A4B32D /* Assets.xcassets in Resources */,
+				3621089425B2222F00D1030A /* logo.png in Resources */,
+				367DA46625B0C237008EAB1E /* TableHeaderView.xib in Resources */,
 				36A43BDC2595174E00A4B32D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -230,11 +251,14 @@
 				36A43BD52595174E00A4B32D /* AppDelegate.swift in Sources */,
 				36A43BFA2595192200A4B32D /* Beer.swift in Sources */,
 				36A43BF2259517D800A4B32D /* RGBiOSUtilitiesBundle.swift in Sources */,
+				367DA46425B0C1CC008EAB1E /* TableHeaderView.swift in Sources */,
 				36A43BF0259517C500A4B32D /* RGBiOSUtilities.swift in Sources */,
 				36D56B44259FF74B00AF2334 /* TableDetailViewController.swift in Sources */,
 				36A43BF4259517E400A4B32D /* RGBiOSUtilitiesSandbox.swift in Sources */,
 				36A43BD72595174E00A4B32D /* SceneDelegate.swift in Sources */,
+				367DA46825B0D203008EAB1E /* MakerDetailView.swift in Sources */,
 				36A43C05259F6AB600A4B32D /* RowCell.swift in Sources */,
+				367DA46225B06732008EAB1E /* Maker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

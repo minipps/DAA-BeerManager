@@ -9,14 +9,14 @@
 import Foundation
 import UIKit
 public class Beer : NSObject, NSCoding, NSSecureCoding {
+    //MARK: Constants
     let FORMATO_FECHA = "MMMM dd"
     let NAME_OF_PHOTO_FOLDER_IN_BUNDLE = "BeerManager-photos"
     public static var supportsSecureCoding = true
+    //MARK: Attributes
     var name:String
-    var tipoEnvase:String //TODO: Enum TipoEnvase
+    var tipoEnvase:String
     var fabricante:String
-    //TODO: Comentado temporalmente porque no hay pais en el csv
-    //var pais:String
     var capacidad:Float
     var fechaConsumo:Date
     var nota:String
@@ -24,7 +24,7 @@ public class Beer : NSObject, NSCoding, NSSecureCoding {
     var gradIBU:Float
     var gradAlc:Float
     var foto:UIImage?
-    
+    //MARK: init() with token string
     public init?(record: String) {
         let tokens = record.components(separatedBy: "\t")
         let fm = FileManager.default
@@ -35,7 +35,6 @@ public class Beer : NSObject, NSCoding, NSSecureCoding {
         let tempName = tokens[0]
         let tempTipo = tokens[1]
         let tempFab = tokens[2]
-        //let tempPais = tokens[3]
         let tempCapacidad = (tokens[3] as NSString).floatValue
         guard let tempFecha = df.date(from: tokens[4]) else { return nil }
         let tempNota = tokens[5]
@@ -55,8 +54,7 @@ public class Beer : NSObject, NSCoding, NSSecureCoding {
                             //No podemos hacer guard de lo mismo para gradAlc porque esto no nos dejaría añadir cervezas sin alcohol
         self.name = tempName
         self.tipoEnvase = tempTipo
-        self.fabricante = tempFab
-        //self.pais = tempPais //No existe el pais en el csv...	
+        self.fabricante = tempFab.trimmingCharacters(in: .whitespacesAndNewlines)
         self.capacidad = tempCapacidad
         self.fechaConsumo = tempFecha
         self.nota = tempNota
@@ -65,6 +63,7 @@ public class Beer : NSObject, NSCoding, NSSecureCoding {
         self.gradAlc = tempGradAlc
         self.foto = tempFoto;
     }
+    //MARK: Empty init
     override public init() {
         self.name = "Nueva cerveza"
         self.tipoEnvase = ""
@@ -77,11 +76,11 @@ public class Beer : NSObject, NSCoding, NSSecureCoding {
         self.gradAlc = 0.0
         self.foto = nil;
     }
+    //MARK: NSCoder stubs
     public func encode(with coder: NSCoder) {
         coder.encode(name, forKey: "name")
         coder.encode(tipoEnvase, forKey: "tipoEnvase")
         coder.encode(fabricante, forKey: "fabricante")
-        //coder.encode(pais, forKey: "pais")
         coder.encode(capacidad, forKey: "capacidad")
         coder.encode(fechaConsumo, forKey: "fechaConsumo")
         coder.encode(nota, forKey: "nota")
@@ -95,13 +94,12 @@ public class Beer : NSObject, NSCoding, NSSecureCoding {
         self.name = coder.decodeObject(forKey: "name") as! String
         self.tipoEnvase = coder.decodeObject(forKey: "tipoEnvase") as! String
         self.fabricante = coder.decodeObject(forKey: "fabricante") as! String
-        //self.pais = coder.decodeObject(forKey: "pais") as! String
-        self.capacidad = coder.decodeObject(forKey: "capacidad") as! Float
+        self.capacidad = coder.decodeFloat(forKey: "capacidad")
         self.fechaConsumo = coder.decodeObject(forKey: "fechaConsumo") as! Date
         self.nota = coder.decodeObject(forKey: "nota") as! String
         self.id = coder.decodeObject(forKey: "id") as! String
-        self.gradIBU = coder.decodeObject(forKey: "gradIBU") as! Float
-        self.gradAlc = coder.decodeObject(forKey: "gradAlc") as! Float
+        self.gradIBU = coder.decodeFloat(forKey: "gradIBU")
+        self.gradAlc = coder.decodeFloat(forKey: "gradAlc")
         self.foto = coder.decodeObject(forKey: "foto") as? UIImage
         
     }
